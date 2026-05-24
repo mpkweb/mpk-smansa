@@ -2172,6 +2172,36 @@ text-align-last: center;
       object-fit: cover !important;
       display: block !important;
   }
+  /* --- METODE PAKSA AKHIR KHUSUS FOTO SURVEY DI HP --- */
+@media screen and (max-width: 768px) {
+  
+  /* 1. Paksa wadah kartu Survey memiliki ukuran */
+  .kegiatan-img-wrapper.hp-force-show {
+    width: 100% !important;
+    height: 300px !important; /* Paksa tinggi di HP agar foto tidak hilang */
+    display: block !important;
+    border-radius: 15px !important;
+    position: relative !important;
+    overflow: hidden !important; /* FOTO WAJIB DI DALAM */
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3) !important;
+  }
+
+  /* 2. Paksa gambar Survey untuk mengisi penuh dan muncul */
+  .kegiatan-img-wrapper.hp-force-show img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Mencegah foto gepeng */
+    display: block !important;
+    object-position: center !important; /* Agar bagian tengah foto tetap terlihat */
+  }
+
+  /* 3. Sesuaikan teks agar tidak menutupi seluruh foto */
+  .kegiatan-img-wrapper.hp-force-show .kegiatan-nama {
+    bottom: 10px !important;
+    font-size: 0.9rem !important;
+    width: 85% !important;
+  }
+}
 }
 }
 }
