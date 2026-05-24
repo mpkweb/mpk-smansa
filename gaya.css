@@ -2205,7 +2205,7 @@ text-align-last: center;
       .tugas-section::before {
         /* Gunakan background-size: cover agar tetap penuh, tapi posisikan agar pas */
         background: url("empeka.jpeg") no-repeat center center !important;
-        background-size: cover !important; 
+        background-size: contain !important; 
         
         /* Kembalikan ke fixed agar ada efek gerak/parallax */
         background-attachment: fixed !important; 
