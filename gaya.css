@@ -1603,9 +1603,6 @@ text-align-last: center;
 }
 @media screen and (max-width: 768px) {
   
-  /* ===================================================
-   STYLING KEGIATAN (UNTUK LAPTOP / DEFAULT)
-   =================================================== */
 /* ===================================================
    STYLING KEGIATAN (UNTUK LAPTOP / DEFAULT)
    =================================================== */
@@ -1679,7 +1676,7 @@ text-align-last: center;
   
   
   /* ===================================================
-   STYLING KHUSUS HP (MAX-WIDTH: 768px) - KEMBALI PORTRAIT & LANDSCAPE NYATA
+   STYLING KHUSUS HP (MAX-WIDTH: 768px) - KUNCI UKURAN ASLI
    =================================================== */
 @media screen and (max-width: 768px) {
   
@@ -1704,23 +1701,24 @@ text-align-last: center;
     font-size: 14px !important;
   }
 
-  /* Susun satu per satu ke bawah */
+  /* KEMBALI KE LAYOUT GRID AMANMU, TAPI 1 KOLOM */
   .kegiatan-grid {
-    display: flex !important;
-    flex-direction: column !important; 
-    align-items: center !important; /* Paksa semua kartu berada tepat di tengah layar HP */
-    gap: 30px !important; /* Beri jarak antar kegiatan agar lega */
+    display: grid !important;
+    grid-template-columns: 1fr !important; /* Satu foto per baris */
+    grid-auto-rows: auto !important;       /* KUNCI: Menghancurkan 150px laptop agar tinggi frame kembali normal */
+    gap: 25px !important;                 /* Jarak antar frame foto */
     padding: 0 15px !important;
   }
 
-  /* Reset layout grid laptop agar tidak merusak flexbox HP */
+  /* Kembalikan fungsi frame asli bawaan HTML-mu */
   .kegiatan-grid .kegiatan-card {
     grid-column: auto !important;
     grid-row: auto !important;
-    margin: 0 auto !important;
+    width: 100% !important;
+    height: auto !important;
   }
 
-  /* Reset tinggi mutlak wadah gambar agar mengikuti rasio asli fotonya */
+  /* Biar bungkus gambar tidak mengunci tinggi kaku */
   .kegiatan-grid .kegiatan-img-wrapper {
     width: 100% !important;
     height: auto !important; 
@@ -1729,32 +1727,12 @@ text-align-last: center;
     overflow: hidden !important;
   }
 
+  /* Paksa gambar mengikuti bentuk asli framenya (Portrait/Landscape) */
   .kegiatan-grid .kegiatan-card img {
     width: 100% !important;
     height: auto !important;
     display: block !important;
-    object-fit: contain !important; 
-  }
-
-  /* ---------------------------------------------------
-     KUNCI UTAMA: PEMBEDA UKURAN BERDASARKAN JENIS FOTO
-     --------------------------------------------------- */
-     
-  /* 1. Khusus Foto PORTRAIT (Survey & Penyerahan Album) */
-  .kegiatan-grid .kegiatan-card.portrait {
-    width: 75% !important; /* Jangan biarkan terlalu lebar ke samping agar tidak memotong teks atas-bawah */
-    max-width: 290px !important; /* Kunci ukuran ideal portrait di HP */
-  }
-
-  /* 2. Khusus Foto LANDSCAPE (Bulan Bahasa, LDKS, dll) */
-  .kegiatan-grid .kegiatan-card.landscape {
-    width: 100% !important; /* Biarkan melebar penuh yang gagah ke samping */
-  }
-
-  /* 3. Khusus Foto SQUARE (Debat Pemilihan Ketos) */
-  .kegiatan-grid .kegiatan-card.square {
-    width: 90% !important; /* Agak sedikit masuk dari tepian layar */
-    max-width: 340px !important;
+    object-fit: cover !important; /* Memotong sedikit ujung jika kepanjangan, tapi bentuk frame tetap terjaga */
   }
 
   /* Efek Background Kegiatan di HP */
@@ -1772,9 +1750,7 @@ text-align-last: center;
     opacity: 0.15;
     z-index: 0;
   }
-}
-  }
-}
+} /* KUNCI: Hanya ada SATU kurung penutup media query di paling bawah! */
 
 @media screen and (max-width: 768px) {
   
@@ -2058,3 +2034,5 @@ text-align-last: center;
 }
 }
     }
+}
+}
