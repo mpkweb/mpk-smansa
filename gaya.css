@@ -2200,44 +2200,30 @@ text-align-last: center;
     font-size: 0.9rem !important;
     width: 85% !important;
    
-/* --- FIX BACKGROUND HP AGAR TIDAK ZOOM TAPI TETAP GERAK --- */
+ /* --- BACKGROUND KHUSUS HP (OVERRIDE LAPTOP) --- */
 @media screen and (max-width: 768px) {
-  .komisi-section {
-      position: relative;
-      overflow: hidden !important;
-      /* Hapus background standar agar tidak bentrok */
-      background: transparent !important; 
-  }
-
-  /* Kita buatkan wadah background sendiri di belakang */
   .komisi-section::before {
-      content: "" !important;
-      position: absolute !important;
-      top: 0 !important;
-      left: 0 !important;
-      width: 100vw !important; /* Lebar selayar penuh */
-      height: 100vh !important; /* Tinggi selayar penuh */
+      /* 1. Ganti gambar laptop dengan gambar HP di sini */
+      background-image: url("empeka.jpeg") !important;
       
-      /* GANTI INI KE GAMBAR HP KAMU (DIPOTONG PORTRAIT) */
-      background-image: url("empeka.jpeg") !important; 
+      /* 2. Paksa fixed agar background diam saat di-scroll */
+      position: fixed !important;
       
-      /* KUNCI: Kita buat dia memanjang tapi tidak membesar selayar */
+      /* 3. Paksa agar ukurannya pas di layar HP */
       background-size: cover !important;
-      background-position: center !important;
+      background-position: center center !important;
       
-      /* Trik agar dia tidak kaku: biarkan dia 'diam' di layar */
-      background-attachment: fixed !important; 
-      
-      z-index: -1 !important; /* Di belakang konten */
-      opacity: 0.25 !important;
+      /* 4. Pastikan opacity tetap konsisten */
+      opacity: 0.15 !important;
   }
+}
+}
 }
 }
 }
     }
 }
   }
-}
 }
 
 
