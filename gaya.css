@@ -2261,36 +2261,6 @@ text-align-last: center;
     color: #666 !important;
     text-align: center !important;
   }
-  /* GANTI BAGIAN @media screen and (max-width: 768px) PUNYA KAMU DENGAN INI */
-@media screen and (max-width: 768px) {
-  .tugas-section {
-    padding: 60px 15px !important;
-    background-color: transparent !important;
-    position: relative;
-  }
-
-  /* PAKSA BACKGROUND MUNCUL DENGAN POSISI LEBIH LUAS */
-  .tugas-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100% !important;
-    height: 100% !important;
-    background: url("empeka.jpeg") no-repeat center center !important;
-    background-size: cover !important;
-    /* Di HP, kita ganti ke 'scroll' kalau 'fixed' bikin gambar hilang */
-    background-attachment: scroll !important; 
-    opacity: 0.2 !important;
-    z-index: -1 !important; /* Pastikan di paling belakang */
-  }
-
-  .timeline { padding-left: 20px; }
-  .timeline::before { left: 0px; }
-  .timeline-item { padding-left: 25px; margin-bottom: 30px; }
-  .timeline-number { left: -15px; }
-  .timeline-item p { font-size: 14px !important; }
-}
 }
 }
 }
