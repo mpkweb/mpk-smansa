@@ -2130,37 +2130,7 @@ text-align-last: center;
     footer {
       padding: 15px 10px !important;
     }
-    /* Modal Pop-up */
-.modal {
-  display: none; 
-  position: fixed; 
-  z-index: 9999; 
-  left: 0; top: 0; 
-  width: 100%; height: 100%; 
-  background: rgba(0,0,0,0.95); /* Latar belakang hitam transparan */
-  padding-top: 60px;
-  text-align: center;
-}
-
-.modal-body {
-  max-width: 700px;
-  margin: auto;
-  padding: 20px;
-}
-
-#imgModal {
-  width: 100%;
-  border-radius: 15px;
-  border: 3px solid #FFD700; /* Bingkai emas agar senada dengan desain */
-}
-
-#titleModal { color: #FFD700; margin: 20px 0; font-size: 2rem; }
-#descModal { color: white; font-size: 1.2rem; line-height: 1.6; }
-
-.close {
-  position: absolute; top: 20px; right: 40px;
-  color: white; font-size: 50px; font-weight: bold; cursor: pointer;
-}
+   
 .kegiatan-card {
   position: relative;
   z-index: 10; /* Pastikan dia paling atas */
@@ -2170,37 +2140,42 @@ text-align-last: center;
 .kegiatan-img-wrapper img {
   pointer-events: none; /* Agar klik diteruskan ke div pembungkusnya */
 }
-/* Pastikan Modal tampil di atas segalanya */
-#modalKegiatan {
-  display: none; /* Default tersembunyi */
-  position: fixed; 
-  z-index: 99999 !important; /* Angka paling tinggi agar tidak tertutup */
-  left: 0; 
-  top: 0; 
-  width: 100%; 
-  height: 100%; 
-  background: rgba(0, 0, 0, 0.95); /* Latar gelap */
-  padding: 20px;
-  overflow-y: auto; /* Agar bisa discroll jika di HP */
-  text-align: center;
-}
+/* --- CSS PALING BAWAH - JANGAN DIUBAH LAGI --- */
+@media screen and (max-width: 768px) {
+  /* 1. Reset semua container kegiatan agar jadi satu kolom tegak */
+  .kegiatan-grid {
+      display: block !important; /* Ubah dari grid ke block agar berurutan */
+  }
 
-.enter-btn {
-  padding: 20px 50px;
-  font-size: 20px;
-  background: white;
-  color: #8B0000;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  margin-top: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-}
+  /* 2. Pastikan card punya ruang */
+  .kegiatan-card {
+      width: 100% !important;
+      margin-bottom: 25px !important;
+      display: block !important;
+      overflow: visible !important; /* Biarkan visible agar badge aman */
+  }
 
-.enter-btn:hover { transform: scale(1.1); background: #f0f0f0; }
+  /* 3. Paksa tinggi wrapper agar foto muncul */
+  .kegiatan-img-wrapper {
+      width: 100% !important;
+      height: 250px !important; /* Paksa tinggi agar foto tidak hilang */
+      display: block !important;
+      border-radius: 15px !important;
+      position: relative !important;
+      overflow: hidden !important; /* Tetap hidden untuk foto saja */
+  }
+
+  /* 4. Pastikan gambar mengisi 100% wrapper */
+  .kegiatan-img-wrapper img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      display: block !important;
   }
 }
 }
 }
+}
+}
+
     
