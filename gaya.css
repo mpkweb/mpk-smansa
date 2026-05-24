@@ -605,6 +605,18 @@ transform: scale(0.95);
   opacity: 0.15;
   z-index: 0;
 }
+/* ===================================================
+   BACKGROUND KHUSUS HP (OVERRIDE LAPTOP)
+   =================================================== */
+   @media screen and (max-width: 768px) {
+    .tugas-section::before {
+      /* Ganti 'empeka-hp.jpeg' dengan nama file background HP kamu */
+      background: url("empeka.jpeg") no-repeat center center !important;
+      background-size: cover !important;
+      background-attachment: scroll !important; /* Fixed sering bug di HP, jadi pakai scroll */
+      opacity: 0.25 !important; /* Sedikit lebih terang agar konten terbaca di HP */
+    }
+  }
 
 /* Memastikan konten di atas background */
 .tugas-section .container,
