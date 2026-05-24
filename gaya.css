@@ -2204,7 +2204,7 @@ text-align-last: center;
 @media screen and (max-width: 768px) {
   .komisi-section::before {
       /* 1. Ganti gambar laptop dengan gambar HP di sini */
-      background-image: url("empeka.jpeg") !important;
+      background-image: url("mpk3.jpeg") !important;
       
       /* 2. Paksa fixed agar background diam saat di-scroll */
       position: fixed !important;
