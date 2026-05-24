@@ -2200,23 +2200,21 @@ text-align-last: center;
     font-size: 0.9rem !important;
     width: 85% !important;
    
- /* --- BACKGROUND HP: UKURAN ASLI (TIDAK ZOOM) --- */
+ /* HP: Paksa background jadi statis tanpa zoom */
 @media screen and (max-width: 768px) {
-  .komisi-section::before {
-      /* Ganti ke gambar HP kamu */
+  .komisi-section {
+      position: relative !important;
       background-image: url("mpk3.jpeg") !important;
-      
-      /* Fixed agar background tetap diam saat scroll */
-      position: fixed !important;
-      
-      /* KUNCI: auto agar gambar tidak dipaksa melar/zoom */
-      background-size: auto !important;
-      
-      /* Ulangi gambar agar memenuhi layar jika ukuran aslinya lebih kecil */
-      background-repeat: repeat !important;
-      
-      background-position: center center !important;
-      opacity: 0.15 !important;
+      background-repeat: no-repeat !important;
+      background-attachment: fixed !important;
+      background-position: center !important;
+      background-size: contain !important; /* Paksa agar terlihat seluruh gambar */
+      background-color: #fff !important; /* Biar pinggirannya gak kosong */
+  }
+
+  /* Hilangkan background dari ::before agar tidak double dan tidak konflik */
+  .komisi-section::before {
+      display: none !important;
   }
 }
 }
