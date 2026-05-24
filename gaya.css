@@ -435,7 +435,65 @@ transform: scale(0.95);
       transform:translateY(-6px);
       box-shadow:0 12px 25px rgba(0,0,0,0.15);
       }
-  
+  /* ===================================================
+   TAMBAHAN LOGIKA FILTER & COMING SOON STRUKTUR
+   =================================================== */
+   
+/* Sembunyikan semua periode struktur secara default */
+.struktur-periode {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+/* Munculkan hanya periode yang aktif sesuai dropdown */
+.struktur-periode.aktif {
+  display: block !important;
+  opacity: 1;
+}
+
+/* Centering layout dropdown agar posisinya manis di tengah */
+.dropdown-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.dropdown-wrapper select {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border: 2px solid #8B0000;
+  border-radius: 8px;
+  background-color: white;
+  color: #8B0000;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Styling Box Coming Soon 2026/2027 */
+.coming-soon {
+  text-align: center;
+  padding: 60px 20px;
+  background: white;
+  border-radius: 15px;
+  max-width: 500px;
+  margin: 40px auto 0;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  border-top: 4px solid #8B0000;
+}
+
+.coming-soon h3 {
+  font-size: 24px;
+  color: #8B0000;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.coming-soon p {
+  font-size: 15px;
+  color: #666;
+}
   
   .kegiatan-card{
   background:white;
