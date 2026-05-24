@@ -2200,20 +2200,22 @@ text-align-last: center;
     font-size: 0.9rem !important;
     width: 85% !important;
    
- /* --- BACKGROUND KHUSUS HP (OVERRIDE LAPTOP) --- */
+ /* --- BACKGROUND HP: UKURAN ASLI (TIDAK ZOOM) --- */
 @media screen and (max-width: 768px) {
   .komisi-section::before {
-      /* 1. Ganti gambar laptop dengan gambar HP di sini */
+      /* Ganti ke gambar HP kamu */
       background-image: url("mpk3.jpeg") !important;
       
-      /* 2. Paksa fixed agar background diam saat di-scroll */
+      /* Fixed agar background tetap diam saat scroll */
       position: fixed !important;
       
-      /* 3. Paksa agar ukurannya pas di layar HP */
-      background-size: cover !important;
-      background-position: center center !important;
+      /* KUNCI: auto agar gambar tidak dipaksa melar/zoom */
+      background-size: auto !important;
       
-      /* 4. Pastikan opacity tetap konsisten */
+      /* Ulangi gambar agar memenuhi layar jika ukuran aslinya lebih kecil */
+      background-repeat: repeat !important;
+      
+      background-position: center center !important;
       opacity: 0.15 !important;
   }
 }
@@ -2221,13 +2223,7 @@ text-align-last: center;
 }
 }
 }
+}
     }
 }
-  }
-}
-
-
-
-
-
-    
+  
