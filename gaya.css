@@ -2143,6 +2143,57 @@ text-align-last: center;
     max-height: 350px !important; 
     overflow: hidden;
   }
+  /* ===================================================
+   STYLING KHUSUS HP (MAX-WIDTH: 768px)
+   =================================================== */
+@media screen and (max-width: 768px) {
+  /* RESPONSIVE DROPDOWN UNTUK HP */
+  .dropdown-wrapper {
+    display: flex !important;
+    justify-content: center !important;
+    margin: 0 auto 30px !important;
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .dropdown-wrapper select {
+    width: 100% !important;
+    max-width: 280px !important;
+    padding: 12px !important;
+    font-size: 15px !important;
+    text-align: center;
+    border: 2px solid #8B0000 !important;
+    border-radius: 10px !important;
+    background-color: white !important;
+    color: #8B0000 !important;
+    font-weight: 700 !important;
+  }
+
+  /* PAKSA HANCURKAN KOTAK/CARD COMING SOON DI HP */
+  .coming-soon {
+    width: 100% !important;
+    max-width: none !important;
+    background: transparent !important;   /* Menghapus background putih paksa */
+    background-color: transparent !important;
+    box-shadow: none !important;          /* Menghapus bayangan kotak */
+    border: none !important;              /* Menghapus garis border merah */
+    padding: 40px 10px !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+
+  .coming-soon h3 {
+    font-size: 2rem !important;
+    color: #8B0000 !important;
+    text-align: center !important;
+  }
+
+  .coming-soon p {
+    font-size: 14px !important;
+    color: #666 !important;
+    text-align: center !important;
+  }
+}
 }
 }
     }
