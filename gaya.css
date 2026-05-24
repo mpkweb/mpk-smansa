@@ -2200,22 +2200,16 @@ text-align-last: center;
     font-size: 0.9rem !important;
     width: 85% !important;
    
-    /* --- FIX BACKGROUND HP (PALING AMAN) --- */
+/* --- BACKGROUND KHUSUS KOMISI (HP) --- */
 @media screen and (max-width: 768px) {
-  .tugas-section::before {
-    /* Ganti ke gambar HP kamu, pastikan ukurannya portrait/tegak */
-    background-image: url("empeka.jpeg") !important;
-    
-    /* Gunakan scroll agar HP tidak error */
-    background-attachment: scroll !important; 
-    
-    /* Agar gambar tidak zoom tapi tetap mengisi area */
-    background-size: cover !important;
-    background-position: center !important;
-    
-    /* Pastikan opacity tetap konsisten */
-    opacity: 0.25 !important;
+  .komisi-section {
+      /* Ganti 'bg-komisi-hp.jpeg' dengan nama file gambar HP kamu */
+      background-image: url("empeka.jpeg") !important;
+      background-attachment: scroll !important; /* Biar tidak nge-zoom/error */
+      background-size: cover !important;
+      background-position: center !important;
   }
+}
 }
     }
 }
@@ -2223,7 +2217,7 @@ text-align-last: center;
 }
 }
 }
-}
+
 
 
 
