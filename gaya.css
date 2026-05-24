@@ -1676,7 +1676,7 @@ text-align-last: center;
   
   
   /* ===================================================
-   STYLING KHUSUS HP (MAX-WIDTH: 768px) - KUNCI UKURAN ASLI
+   STYLING KHUSUS HP (MAX-WIDTH: 768px) - FINAL FIX
    =================================================== */
 @media screen and (max-width: 768px) {
   
@@ -1701,48 +1701,68 @@ text-align-last: center;
     font-size: 14px !important;
   }
 
-  /* KEMBALI KE LAYOUT GRID AMANMU, TAPI 1 KOLOM */
+  /* Susun satu per satu lurus ke bawah */
   .kegiatan-grid {
-    display: grid !important;
-    grid-template-columns: 1fr !important; /* Satu foto per baris */
-    grid-auto-rows: auto !important;       /* KUNCI: Menghancurkan 150px laptop agar tinggi frame kembali normal */
-    gap: 25px !important;                 /* Jarak antar frame foto */
+    display: flex !important;
+    flex-direction: column !important; 
+    align-items: center !important; /* Paksa posisi kartu di tengah layar HP */
+    gap: 25px !important; 
     padding: 0 15px !important;
   }
 
-  /* Kembalikan fungsi frame asli bawaan HTML-mu */
+  /* Reset mutlak sisa-sisa grid laptop */
   .kegiatan-grid .kegiatan-card {
     grid-column: auto !important;
     grid-row: auto !important;
-    width: 100% !important;
-    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
   }
 
-  /* Biar bungkus gambar tidak mengunci tinggi kaku */
   .kegiatan-grid .kegiatan-img-wrapper {
     width: 100% !important;
-    height: auto !important; 
-    max-height: none !important; 
     border-radius: 15px !important;
     overflow: hidden !important;
   }
 
-  /* Paksa gambar mengikuti bentuk asli framenya (Portrait/Landscape) */
+  /* ----------------==================================
+     PENGATURAN BENTUK FRAME FOTO DI HP
+     ----------------================================== */
+
+  /* 1. KHUSUS PORTRAIT (Survey & Penyerahan Album) -> Ramping & Tinggi */
+  .kegiatan-grid .kegiatan-card.portrait {
+    width: 75% !important; 
+    max-width: 290px !important;
+  }
+  .kegiatan-grid .kegiatan-card.portrait .kegiatan-img-wrapper {
+    height: auto !important;
+    aspect-ratio: 3 / 4 !important; /* Tinggi tegak ke bawah */
+  }
+
+  /* 2. KHUSUS KARTU LANDSCAPE & KARTU SQUARE (Debat & Sisa Semua Foto ke Bawah) */
+  /* Di sini si .square (Debat & LDKM) kita satukan aturannya dengan .landscape agar berubah jadi landscape melebar */
+  .kegiatan-grid .kegiatan-card.landscape,
+  .kegiatan-grid .kegiatan-card.square {
+    width: 100% !important; /* Lebar penuh memenuhi layar HP agar rapi */
+  }
+  
+  .kegiatan-grid .kegiatan-card.landscape .kegiatan-img-wrapper,
+  .kegiatan-grid .kegiatan-card.square .kegiatan-img-wrapper {
+    height: auto !important;
+    aspect-ratio: 16 / 9 !important; /* DIUBAH JADI LANDSCAPE KANAN-KIRI */
+  }
+
+  /* Pengaturan Gambar di Dalam Frame agar Tidak Penyet */
   .kegiatan-grid .kegiatan-card img {
     width: 100% !important;
-    height: auto !important;
-    display: block !important;
-    object-fit: cover !important; /* Memotong sedikit ujung jika kepanjangan, tapi bentuk frame tetap terjaga */
+    height: 100% !important;
+    object-fit: cover !important; /* Mengisi penuh frame landscape/portrait tanpa merusak rasio asli gambar */
   }
 
   /* Efek Background Kegiatan di HP */
   .kegiatan-section::before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0; width: 100%; height: 100%;
     background: url('bg2.png') no-repeat center center;
     background-size: contain !important; 
     background-attachment: fixed; 
@@ -1750,7 +1770,7 @@ text-align-last: center;
     opacity: 0.15;
     z-index: 0;
   }
-} /* KUNCI: Hanya ada SATU kurung penutup media query di paling bawah! */
+}
 
 @media screen and (max-width: 768px) {
   
