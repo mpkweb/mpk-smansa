@@ -960,11 +960,12 @@ transform: scale(0.95);
 }
 
 .kegiatan-img-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; 
-  display: block;
-  transition: transform 0.3s ease, filter 0.3s ease;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: visible; 
+    border-radius: 15px;
+    object-fit: cover;
 }
 
 
@@ -1020,6 +1021,59 @@ transform: scale(0.95);
   color: #940303; 
   margin-bottom: 40px; 
   text-shadow: 0 0 5px rgba(255,255,255,0.5); 
+}
+/* Styling Kartu Baru */
+/* Styling Kartu Baru */
+.new-news-card {
+  order: -1; /* Memaksa dia tampil di urutan pertama */
+  grid-column: span 1; /* Karena portrait, jadi lebarnya cuma 1 kolom */
+  grid-row: span 2;    /* Tingginya 2 baris agar sesuai portrait */
+}
+
+/* Memastikan Badge NEW NEWS tetap cantik di pojok */
+.badge-new {
+  position: absolute;
+  /* Geser ke atas dan ke kanan agar "keluar" dari foto */
+  top: -10px;    
+  right: -10px;  
+  
+  background: #FFD700;
+  color: #8B0000;
+  padding: 6px 14px;
+  font-weight: 900;
+  font-size: 0.85rem;
+  border-radius: 20px;
+  z-index: 10; /* Pastikan paling atas */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  animation: blink 1.5s infinite;
+  
+  white-space: nowrap; 
+  border: 2px solid white; /* Kasih garis tepi putih biar lebih pop-up */
+}
+
+/* Judul khusus agar lebih besar di HP */
+.kegiatan-nama.big-text {
+  font-size: 1.3rem; 
+  line-height: 1.2;
+  background: rgba(0,0,0,0.6);
+  padding: 10px;
+}
+
+/* Animasi Kedip untuk New News */
+@keyframes blink {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+/* Responsif untuk HP agar teks tidak kepotong */
+@media screen and (max-width: 480px) {
+  .kegiatan-nama.big-text {
+      font-size: 1.2rem;
+  }
+  .badge-new {
+      font-size: 0.8rem;
+  }
 }
 
 .aspirasi-section {
@@ -2060,139 +2114,7 @@ text-align-last: center;
   }
 }
 
-/* ===================================================
-   FIX TOTAL: ASPIRASI LAPTOP (MODEL BINGKAI EMAS MAKSIMAL)
-   =================================================== */
-   @media screen and (min-width: 769px) {
-  
-    
-    #aspirasi.aspirasi-section {
-      background: radial-gradient(circle at center, #800000d2 0%, #300000ca 70%, #000000d3 100%) !important; 
-      padding: 120px 0 !important;
-      position: relative !important;
-      display: flex !important;
-      justify-content: center !important;
-      align-items: center !important;
-      min-height: 650px !important;
-      overflow: hidden !important;
-    }
-  
-    
-    #aspirasi .aspirasi-bg {
-      position: absolute !important;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.6) !important; 
-      z-index: 0 !important;
-    }
-  
-    
-    #aspirasi.aspirasi-section::before {
-      content: "" !important;
-      position: absolute !important;
-      top: 50% !important;
-      left: 50% !important;
-      transform: translate(-50%, -50%) !important;
-      width: 650px !important; 
-      height: 650px !important;
-      background: url('20260315_014405_0000.png') no-repeat center/contain !important;
-      opacity: 0.6 !important; 
-      z-index: 1 !important;
-      filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.4)); 
-    }
-  
-    
-    #aspirasi .container {
-      background: rgba(255, 255, 255, 0.1) !important; 
-      border: 5px solid #FFD700 !important; 
-      border-style: double !important; 
-      border-radius: 40px !important;
-      padding: 100px 80px !important; 
-      max-width: 1200px !important; 
-      width: 90% !important;
-      margin: 0 auto !important;
-      position: relative !important;
-      z-index: 10 !important; 
-      backdrop-filter: blur(15px) !important; 
-      box-shadow: 0 0 40px rgba(255, 215, 0, 0.3) !important; 
-      text-align: center !important;
-      display: block !important;
-    }
-  
-    
-    #aspirasi h2 {
-      color: #ffffff !important;
-      font-size: 3.8rem !important; 
-      font-weight: 800 !important;
-      margin-bottom: 25px !important;
-      text-shadow: 0 0 20px rgba(255, 215, 0, 0.6) !important; 
-      letter-spacing: 3px !important;
-      display: block !important;
-    }
-  
-    #aspirasi p {
-      color: #ffffff !important;
-      font-size: 1.4rem !important;
-      line-height: 1.6 !important;
-      max-width: 900px !important;
-      margin: 0 auto 45px auto !important;
-      opacity: 1 !important;
-      display: block !important;
-    }
-  
-    
-  #aspirasi .container .aspirasi-btn {
-    background: #ffffff !important; 
-    color: #8B0000 !important;    
-    padding: 18px 50px !important;
-    font-size: 1.2rem !important;
-    font-weight: 800 !important;
-    border-radius: 50px !important;
-    text-decoration: none !important;
-    display: inline-block !important;
-    transition: all 0.3s ease-in-out !important; 
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4) !important; 
-    border: none !important;
-  }
-
-  
-  #aspirasi .container .aspirasi-btn:hover {
-    background: #ffffff !important; 
-    color: #8B0000 !important;   
-    transform: scale(1.08) !important; 
-    
-    box-shadow: 
-      0 0 20px rgba(255, 215, 0, 0.8), 
-      0 0 40px rgba(255, 215, 0, 0.5), 
-      0 0 60px rgba(255, 165, 0, 0.3) !important; 
-  }
-
-  
-  #aspirasi .container .aspirasi-btn:active {
-    transform: scale(0.98) !important;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5) !important;
-  }
-}
-
-   @media screen and (min-width: 769px) {
-    
-    footer .social-links a {
-      font-size: 3rem !important; 
-      margin: 0 25px !important; 
-    }
-  
-    footer .follow-us {
-      font-size: 1.8rem !important;
-      margin-bottom: 15px !important;
-    }
-  
-    footer .social-links a:hover {
-      transform: scale(1.3) !important; 
-      color: #FFD700 !important;       
-    
-    
-    footer {
-      padding: 15px 10px !important;
-    }
+} 
     /* TAMBAHKAN KODE INI DI DALAM MEDIA QUERY HP KAMU */
 @media screen and (max-width: 768px) {
   
@@ -2261,9 +2183,140 @@ text-align-last: center;
     color: #666 !important;
     text-align: center !important;
   }
+
+   @media screen and (min-width: 769px) {
+    
+    footer .social-links a {
+      font-size: 3rem !important; 
+      margin: 0 25px !important; 
+    }
+  
+    footer .follow-us {
+      font-size: 1.8rem !important;
+      margin-bottom: 15px !important;
+    }
+  
+    footer .social-links a:hover {
+      transform: scale(1.3) !important; 
+      color: #FFD700 !important;       
+    
+    
+    footer {
+      padding: 15px 10px !important;
+    }
+    /* Modal Pop-up */
+.modal {
+  display: none; 
+  position: fixed; 
+  z-index: 9999; 
+  left: 0; top: 0; 
+  width: 100%; height: 100%; 
+  background: rgba(0,0,0,0.95); /* Latar belakang hitam transparan */
+  padding-top: 60px;
+  text-align: center;
+}
+
+.modal-body {
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+}
+
+#imgModal {
+  width: 100%;
+  border-radius: 15px;
+  border: 3px solid #FFD700; /* Bingkai emas agar senada dengan desain */
+}
+
+#titleModal { color: #FFD700; margin: 20px 0; font-size: 2rem; }
+#descModal { color: white; font-size: 1.2rem; line-height: 1.6; }
+
+.close {
+  position: absolute; top: 20px; right: 40px;
+  color: white; font-size: 50px; font-weight: bold; cursor: pointer;
+}
+.kegiatan-card {
+  position: relative;
+  z-index: 10; /* Pastikan dia paling atas */
+  cursor: pointer !important;
+}
+
+.kegiatan-img-wrapper img {
+  pointer-events: none; /* Agar klik diteruskan ke div pembungkusnya */
+}
+/* Pastikan Modal tampil di atas segalanya */
+#modalKegiatan {
+  display: none; /* Default tersembunyi */
+  position: fixed; 
+  z-index: 99999 !important; /* Angka paling tinggi agar tidak tertutup */
+  left: 0; 
+  top: 0; 
+  width: 100%; 
+  height: 100%; 
+  background: rgba(0, 0, 0, 0.95); /* Latar gelap */
+  padding: 20px;
+  overflow-y: auto; /* Agar bisa discroll jika di HP */
+  text-align: center;
+}
+
+/* Biarkan modal terlihat saat dipanggil oleh JS */
+#modalKegiatan.show {
+  display: block !important;
+}
+
+.modal-body {
+  position: relative;
+  max-width: 600px;
+  margin: 50px auto;
+  background: #1a0000; /* Sesuaikan dengan warna tema kamu */
+  padding: 20px;
+  border-radius: 20px;
+  border: 3px solid #FFD700;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9);
+  padding: 50px;
+}
+/* Splash Screen Full Screen */
+#splash-screen {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; 
+  height: 100vh;
+  background: #8B0000; /* Warna Merah Marun */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+  text-align: center;
+  color: white;
+}
+
+.splash-logo { width: 200px; margin-bottom: 20px; }
+.splash-content h1 { font-size: 3rem; margin: 10px 0; }
+
+.enter-btn {
+  padding: 20px 50px;
+  font-size: 20px;
+  background: white;
+  color: #8B0000;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.enter-btn:hover { transform: scale(1.1); background: #f0f0f0; }
+  }
 }
 }
 }
     }
-}
-}
