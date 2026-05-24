@@ -1606,78 +1606,83 @@ text-align-last: center;
   /* ===================================================
    STYLING KEGIATAN (UNTUK LAPTOP / DEFAULT)
    =================================================== */
-.kegiatan-title {
-  font-size: 3rem !important; 
-  font-weight: 800 !important;
-  text-align: center;
-  margin-bottom: 40px !important;
-  text-transform: uppercase; 
-  letter-spacing: 2px;
-  color: #8B0000;
-}
-
-.kegiatan-section {
-  padding: 60px 20px !important; 
-}
-
-/* TOMBOL FILTER PERIODE (LAPTOP) */
-.periode-filter {
-  display: flex !important;
-  flex-direction: row !important; 
-  justify-content: center;
-  align-items: center;
-  gap: 15px;        
-  width: 100%;
-  max-width: 400px; 
-  margin: 0 auto 40px;
-}
-
-.periode-filter button {
-  flex: 1; 
-  padding: 12px 20px !important;
-  font-size: 15px !important;
-  font-weight: 700;
-  white-space: nowrap; 
-  border-radius: 10px;
-  background: #8B0000;
-  color: white;
-  border: none;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.periode-filter button:hover {
-  background: #DC143C;
-}
-
-/* GRID KEGIATAN */
-.kegiatan-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 12px !important; 
-  padding: 0; 
-}
-
-.kegiatan-card.landscape {
-  grid-column: span 2; 
-}
-
-.kegiatan-card.portrait {
-  grid-row: span 2;
-}
-
-.kegiatan-nama {
-  font-size: 0.85rem !important;
-  padding: 4px 8px;
-  bottom: 5px;
-  width: 85%; 
-}
-
-
 /* ===================================================
-   STYLING KHUSUS HP (MAX-WIDTH: 768px)
+   STYLING KEGIATAN (UNTUK LAPTOP / DEFAULT)
    =================================================== */
-   @media screen and (max-width: 768px) {
+   .kegiatan-title {
+    font-size: 3rem !important; 
+    font-weight: 800 !important;
+    text-align: center;
+    margin-bottom: 40px !important;
+    text-transform: uppercase; 
+    letter-spacing: 2px;
+    color: #8B0000;
+  }
+  
+  .kegiatan-section {
+    padding: 60px 20px !important; 
+    position: relative; /* Ditambahkan agar background ::before di HP posisinya pas */
+  }
+  
+  /* TOMBOL FILTER PERIODE (LAPTOP) */
+  .periode-filter {
+    display: flex !important;
+    flex-direction: row !important; 
+    justify-content: center;
+    align-items: center;
+    gap: 15px;        
+    width: 100%;
+    max-width: 400px; 
+    margin: 0 auto 40px;
+  }
+  
+  .periode-filter button {
+    flex: 1; 
+    padding: 12px 20px !important;
+    font-size: 15px !important;
+    font-weight: 700;
+    white-space: nowrap; 
+    border-radius: 10px;
+    background: #8B0000;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .periode-filter button:hover {
+    background: #DC143C;
+  }
+  
+  /* GRID KEGIATAN LAPTOP */
+  .kegiatan-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 12px !important; 
+    padding: 0; 
+  }
+  
+  .kegiatan-card.landscape {
+    grid-column: span 2; 
+  }
+  
+  .kegiatan-card.portrait {
+    grid-row: span 2;
+  }
+  
+  .kegiatan-nama {
+    font-size: 0.85rem !important;
+    padding: 4px 8px;
+    bottom: 5px;
+    width: 85%; 
+  }
+  
+  
+  /* ===================================================
+     STYLING KHUSUS HP (MAX-WIDTH: 768px) - SEPAKAT SATU WADAH
+     =================================================== */
+  @media screen and (max-width: 768px) {
+    
     .kegiatan-title {
       font-size: 2.2rem !important; 
       max-width: 280px; 
@@ -1699,50 +1704,44 @@ text-align-last: center;
       font-size: 14px !important;
     }
   
-    /* FORCE SEMUA FOTO JADI SATU KOLOM PENUH (KAYAK BULAN BAHASA) */
+    /* PAKSA SEMUA FOTO JADI SATU BARIS PENUH KE BAWAH (KAYAK BULAN BAHASA) */
     .kegiatan-grid {
       display: flex !important;
-      flex-direction: column !important; /* Susun semuanya lurus ke bawah */
-      gap: 20px !important; /* Kasih jarak antar foto biar ga mepet */
+      flex-direction: column !important; 
+      gap: 20px !important; 
       padding: 0 10px !important;
     }
   
-    /* Reset semua fungsi portrait/landscape bawaan laptop biar ga tabrakan */
+    /* Reset mutlak semua fungsi grid biar ga tabrakan di HP */
     .kegiatan-grid .kegiatan-card {
       grid-column: auto !important;
       grid-row: auto !important;
-      width: 100% !important; /* Paksa lebar foto 100% memenuhi layar HP */
+      width: 100% !important; 
     }
   
-    /* Atur tinggi semua bungkus foto di HP agar seragam dan proporsional */
+    /* Mengatur tinggi pembungkus foto di HP agar proporsional dan tidak penyet */
     .kegiatan-grid .kegiatan-img-wrapper {
-      height: 240px !important; /* Tinggi yang pas untuk layar HP */
+      height: 250px !important; 
       border-radius: 15px !important;
       overflow: hidden;
     }
+  
+    /* Efek Background Kegiatan di HP digabung ke sini agar rapi */
+    .kegiatan-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('bg2.png') no-repeat center center;
+      background-size: contain !important; 
+      background-attachment: fixed; 
+      background-color: #fff; 
+      opacity: 0.15;
+      z-index: 0;
+    }
   }
-}
-}
-@media screen and (max-width: 768px) {
-  .kegiatan-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    
-    background: url('bg2.png') no-repeat center center;
-    background-size: contain !important; 
-    
-    
-    background-attachment: fixed; 
-    
-    background-color: #fff; 
-    opacity: 0.15;
-    z-index: 0;
-  }
-}
 @media screen and (max-width: 768px) {
   
   .aspirasi-section {
@@ -2025,4 +2024,5 @@ text-align-last: center;
 }
 }
     }
-  
+  }
+}
