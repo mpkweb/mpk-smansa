@@ -1679,7 +1679,7 @@ text-align-last: center;
   
   
   /* ===================================================
-   STYLING KHUSUS HP (MAX-WIDTH: 768px) - KEMBALIKAN BENTUK ASLI FOTO
+   STYLING KHUSUS HP (MAX-WIDTH: 768px) - FIX PROPORSIONAL
    =================================================== */
 @media screen and (max-width: 768px) {
   
@@ -1704,34 +1704,35 @@ text-align-last: center;
     font-size: 14px !important;
   }
 
-  /* TETAP SATU KOLOM LURUS KE BAWAH */
+  /* KEMBALI PAKAI GRID TAPI SATU KOLOM PENUH */
   .kegiatan-grid {
-    display: flex !important;
-    flex-direction: column !important; 
-    gap: 25px !important; /* Jarak antar foto agak dilegakan biar makin sinematik */
+    display: grid !important;
+    grid-template-columns: 1fr !important; /* Paksa jadi 1 kolom lurus ke bawah */
+    grid-auto-rows: auto !important;       /* HAPUS KEKUATAN 150px LAPTOP, BIAR TINGGI MENGIKUTI FOTO ASLI */
+    gap: 25px !important;                 /* Jarak antar foto biar lega */
     padding: 0 15px !important;
   }
 
-  /* Reset mutlak semua grid laptop */
+  /* RESET SEMUA SUSUNAN KOLOM/BARIS LAPTOP BIAR GAK TABRAKAN */
   .kegiatan-grid .kegiatan-card {
-    grid-column: auto !important;
+    grid-column: span 1 !important;
     grid-row: auto !important;
     width: 100% !important; 
   }
 
-  /* INI KUNCINYA: Kembalikan bentuk asli foto (Portrait, Landscape, Square) */
+  /* KEMBALIKAN BENTUK DAN UKURAN ASLI FOTO */
   .kegiatan-grid .kegiatan-img-wrapper {
-    height: auto !important; /* Hapus angka 250px kemarin, ganti jadi auto biar ngikutin bentuk asli gambar */
+    width: 100% !important;
+    height: auto !important; /* Biar wadahnya melar alami sesuai jenis fotonya */
     max-height: none !important; 
     border-radius: 15px !important;
-    overflow: hidden;
+    overflow: hidden !important;
   }
 
-  /* Memastikan gambar di dalamnya melebar proporsional sesuai bentuk aslinya */
   .kegiatan-grid .kegiatan-card img {
     width: 100% !important;
     height: auto !important;
-    object-fit: contain !important; /* Menjaga gambar asli tidak terpotong atau penyet */
+    object-fit: contain !important; /* Foto utuh terlihat semua tanpa terpotong */
   }
 
   /* Efek Background Kegiatan di HP */
@@ -1748,6 +1749,8 @@ text-align-last: center;
     background-color: #fff; 
     opacity: 0.15;
     z-index: 0;
+  }
+}
   }
 }
 @media screen and (max-width: 768px) {
@@ -2032,5 +2035,3 @@ text-align-last: center;
 }
 }
     }
-  }
-}
