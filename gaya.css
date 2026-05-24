@@ -2200,21 +2200,23 @@ text-align-last: center;
     font-size: 0.9rem !important;
     width: 85% !important;
    
-    /* bg hp tugas dan fungsi */
-    @media screen and (max-width: 768px) {
-      .tugas-section::before {
-        /* Gunakan background-size: cover agar tetap penuh, tapi posisikan agar pas */
-        background: url("empeka.jpeg") no-repeat center center !important;
-        background-size: contain !important; 
-        
-        /* Kembalikan ke fixed agar ada efek gerak/parallax */
-        background-attachment: fixed !important; 
-        
-        /* Paksa posisi agar gambar tidak terlalu zoom di tengah */
-        background-position: center center !important;
-        
-        opacity: 0.25 !important;
-      }
+    /* --- FIX BACKGROUND HP (PALING AMAN) --- */
+@media screen and (max-width: 768px) {
+  .tugas-section::before {
+    /* Ganti ke gambar HP kamu, pastikan ukurannya portrait/tegak */
+    background-image: url("empeka.jpeg") !important;
+    
+    /* Gunakan scroll agar HP tidak error */
+    background-attachment: scroll !important; 
+    
+    /* Agar gambar tidak zoom tapi tetap mengisi area */
+    background-size: cover !important;
+    background-position: center !important;
+    
+    /* Pastikan opacity tetap konsisten */
+    opacity: 0.25 !important;
+  }
+}
     }
 }
   }
@@ -2222,7 +2224,7 @@ text-align-last: center;
 }
 }
 }
-}
+
 
 
     
