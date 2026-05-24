@@ -368,77 +368,82 @@ transform: scale(0.95);
   
   
   
-  .struktur-section{
-      position:relative;
-      padding:80px 0;
-      background:#f9f9f9;
-      overflow:hidden;
-  }
-  
-  .struktur-section::before{
-      content:"";
-      position:absolute;
-      top:50%;
-      left:50%;
-      transform:translate(-50%,-50%);
-      width:800px;
-      height:800px;
-      background:url("20260315_014405_0000.png") no-repeat center;
-      background-size:contain;
-      opacity:0.27;
-      z-index:0;
-  }
-  
-  .struktur-section .container{
-      position:relative;
-      z-index:1;
-  }
-      .struktur-row{
-      display:flex;
-      justify-content:center;
-      gap:20px;
-      flex-wrap:wrap;
-      margin-top:25px;
-      }
-      
-      .struktur-row.center{
-      justify-content:center;
-      }
-      
-      .struktur-card{
-      background:white;
-      padding:16px;
-      border-radius:15px;
-      width:220px;
-      box-shadow:0 8px 20px rgba(0,0,0,0.08);
-      border-top:4px solid #8B0000;
-      transition:0.3s;
-      }
-      
-      .struktur-card h3{
-      font-size:16px;
-      color:#8B0000;
-      margin-bottom:6px;
-      }
-      
-      .struktur-card p{
-      font-size:14px;
-      margin-bottom:5px;
-      }
-      
-      .struktur-card ul{
-      font-size:13px;
-      padding-left:18px;
-      }
-      
-      .struktur-card:hover{
-      transform:translateY(-6px);
-      box-shadow:0 12px 25px rgba(0,0,0,0.15);
-      }
   /* ===================================================
-   TAMBAHAN LOGIKA FILTER & COMING SOON STRUKTUR
+   STYLING STRUKTUR (UNTUK LAPTOP / DEFAULT)
    =================================================== */
-   
+.struktur-section {
+  position: relative;
+  padding: 80px 0;
+  background: #f9f9f9;
+  overflow: hidden;
+}
+
+.struktur-section::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: url("20260315_014405_0000.png") no-repeat center;
+  background-size: contain;
+  opacity: 0.27;
+  z-index: 0;
+}
+
+.struktur-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.struktur-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.struktur-row.center {
+  justify-content: center;
+}
+
+.struktur-card {
+  background: white;
+  padding: 16px;
+  border-radius: 15px;
+  width: 220px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  border-top: 4px solid #8B0000;
+  transition: 0.3s;
+}
+
+.struktur-card h3 {
+  font-size: 16px;
+  color: #8B0000;
+  margin-bottom: 6px;
+}
+
+.struktur-card p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.struktur-card ul {
+  font-size: 13px;
+  padding-left: 18px;
+}
+
+.struktur-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* ===================================================
+   LOGIKA FILTER & COMING SOON STRUKTUR (LAPTOP)
+   =================================================== */
+
 /* Sembunyikan semua periode struktur secara default */
 .struktur-periode {
   display: none;
@@ -474,25 +479,54 @@ transform: scale(0.95);
 /* Styling Box Coming Soon 2026/2027 */
 .coming-soon {
   text-align: center;
-  padding: 60px 20px;
-  background: white;
-  border-radius: 15px;
-  max-width: 500px;
-  margin: 40px auto 0;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-  border-top: 4px solid #8B0000;
+  padding: 80px 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  background: transparent !important; /* Hapus background putih */
+  box-shadow: none !important;        /* Hapus shadow kotak */
+  border: none !important;            /* Hapus border atas merah */
 }
 
 .coming-soon h3 {
-  font-size: 24px;
+  font-size: 2.5rem;
+  font-weight: 800;
   color: #8B0000;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
 }
 
 .coming-soon p {
-  font-size: 15px;
-  color: #666;
+  font-size: 16px;
+  color: #4b4949;
+  font-weight: 500;
+}
+
+/* ===================================================
+   STYLING KHUSUS HP (MAX-WIDTH: 768px)
+   =================================================== */
+@media screen and (max-width: 768px) {
+  /* RESPONSIVE DROPDOWN UNTUK HP */
+  .dropdown-wrapper {
+    display: flex !important;
+    justify-content: center !important;
+    margin: 0 auto 30px !important;
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .dropdown-wrapper select {
+    width: 100% !important;
+    max-width: 280px !important; /* Biar ukurannya pas di layar HP */
+    padding: 12px !important;
+    font-size: 15px !important;
+    text-align: center;
+    border: 2px solid #8B0000 !important;
+    border-radius: 10px !important;
+    background-color: white !important;
+    color: #8B0000 !important;
+    font-weight: 700 !important;
+  }
 }
   
   .kegiatan-card{
