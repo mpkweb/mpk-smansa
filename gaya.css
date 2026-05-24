@@ -2199,24 +2199,6 @@ text-align-last: center;
     bottom: 10px !important;
     font-size: 0.9rem !important;
     width: 85% !important;
-   
- /* HP: Paksa background jadi statis tanpa zoom */
-@media screen and (max-width: 768px) {
-  .komisi-section {
-      position: relative !important;
-      background-image: url("mpk3.jpeg") !important;
-      background-repeat: no-repeat !important;
-      background-attachment: fixed !important;
-      background-position: center !important;
-      background-size: contain !important; /* Paksa agar terlihat seluruh gambar */
-      background-color: #fff !important; /* Biar pinggirannya gak kosong */
-  }
-
-  /* Hilangkan background dari ::before agar tidak double dan tidak konflik */
-  .komisi-section::before {
-      display: none !important;
-  }
-}
 }
 }
 }
