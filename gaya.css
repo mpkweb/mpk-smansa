@@ -1066,14 +1066,20 @@ transform: scale(0.95);
   100% { opacity: 1; }
 }
 
-/* Responsif untuk HP agar teks tidak kepotong */
+/* --- RESPONSIVE KHUSUS HP --- */
 @media screen and (max-width: 480px) {
-  .kegiatan-nama.big-text {
-      font-size: 1.2rem;
+  .kegiatan-grid { 
+      grid-template-columns: 1fr 1fr; /* Memaksa 2 kolom di HP agar tidak terlalu lebar */
+      grid-auto-rows: 160px; /* Tinggi kotak di HP */
+      gap: 12px;
+      padding: 10px;
   }
-  .badge-new {
-      font-size: 0.8rem;
-  }
+  
+  .kegiatan-card.portrait { grid-row: span 2; } /* Foto potret tetap tinggi */
+  .kegiatan-card.landscape { grid-column: span 2; } /* Foto landscape tetap lebar */
+  
+  .kegiatan-nama { font-size: 0.8rem; padding: 4px 8px; }
+  .badge-new { font-size: 0.7rem; padding: 3px 8px; top: -5px; right: -5px; }
 }
 
 .aspirasi-section {
