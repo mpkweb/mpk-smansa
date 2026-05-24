@@ -580,14 +580,14 @@ transform: scale(0.95);
 
 .tugas-section {
   padding: 80px 0;
-  background: #fff; /* Warna dasar penutup jika gambar belum termuat */
+  background: transparent !important; /* Dibuat transparan agar background ::before muncul */
   color: #8B0000;
-  position: relative; /* Jangkar untuk posisi background ::before */
+  position: relative;
   overflow: hidden;
 }
 
 /* ===================================================
-   EFEK BACKGROUND GERAK LAPTOP (empeka.jpeg)
+   EFEK BACKGROUND GERAK (LAPTOP: empeka.jpeg)
    =================================================== */
 .tugas-section::before {
   content: '';
@@ -597,18 +597,16 @@ transform: scale(0.95);
   width: 100%;
   height: 100%;
   
-  /* Memanggil gambar khusus LAPTOP */
+  /* Background untuk LAPTOP */
   background: url("empeka2.jpeg") no-repeat center center;
-  background-size: cover !important; /* Menutup penuh seluruh area section */
-  
-  /* KUNCI UTAMA: Background terkunci/gerak sinematik saat di-scroll */
+  background-size: cover !important;
   background-attachment: fixed; 
   
-  opacity: 0.15; /* Transparansi 15% biar teks timeline tetap jelas terbaca */
-  z-index: 0;    /* Berada di balik konten teks */
+  opacity: 0.15;
+  z-index: 0;
 }
 
-/* Memaksa konten timeline berada di atas lapisan background */
+/* Memastikan konten di atas background */
 .tugas-section .container,
 .tugas-section h2,
 .timeline {
@@ -677,9 +675,7 @@ transform: scale(0.95);
   transition: all 0.3s ease;
 }
 
-/* ===================================================
-   EFFECT HOVER & ANIMATION
-   =================================================== */
+/* EFFECT HOVER */
 .timeline-item:hover p {
   transform: translateX(10px);
   background: rgba(255, 215, 0, 0.2);
@@ -695,7 +691,7 @@ transform: scale(0.95);
   100% { opacity: 1; transform: translateX(0); }
 }
 
-/* ANIMATION DELAY ITEM TIMELINE */
+/* DELAY ANIMASI */
 .timeline-item:nth-child(1) { animation-delay: 0s; }
 .timeline-item:nth-child(2) { animation-delay: 0.1s; }
 .timeline-item:nth-child(3) { animation-delay: 0.2s; }
@@ -715,6 +711,7 @@ transform: scale(0.95);
 @media screen and (max-width: 768px) {
   .tugas-section {
     padding: 60px 15px !important;
+    background: transparent !important;
   }
 
   .tugas-section h2 {
@@ -722,33 +719,24 @@ transform: scale(0.95);
     margin-bottom: 40px;
   }
 
-  /* OTOMATIS GANTI BACKGROUND KHUSUS HP DI SINI */
+  /* GANTI BACKGROUND KE empeka2.jpeg KHUSUS HP */
   .tugas-section::before {
     background: url("empeka.jpeg") no-repeat center center !important;
-    background-size: cover !important;  /* Menutup layar vertikal HP dengan sempurna */
-    background-attachment: fixed;       /* Mempertahankan efek scrolling bergerak */
+    background-size: cover !important;
+    background-attachment: fixed;
   }
 
-  .timeline {
-    padding-left: 20px;
-  }
+  .timeline { padding-left: 20px; }
+  .timeline::before { left: 0px; }
+  .timeline-item { padding-left: 25px; margin-bottom: 30px; }
+  .timeline-number { left: -15px; }
+  .timeline-item p { font-size: 14px !important; }
+}
 
-  .timeline::before {
-    left: 0px;
-  }
-
-  .timeline-item {
-    padding-left: 25px;
-    margin-bottom: 30px;
-  }
-
-  .timeline-number {
-    left: -15px;
-  }
-
-  .timeline-item p {
-    font-size: 14px !important;
-  }
+.hero-logo {
+  position: relative;
+  width: 100%;
+  height: auto;
 }
 
 /* ===================================================
@@ -2255,8 +2243,8 @@ text-align-last: center;
     max-width: none !important;
     background: transparent !important;   /* Menghapus background putih paksa */
     background-color: transparent !important;
-    box-shadow: none !important;         
-    border: none !important;              
+    box-shadow: none !important;          /* Menghapus bayangan kotak */
+    border: none !important;              /* Menghapus garis border merah */
     padding: 40px 10px !important;
     margin: 0 auto !important;
     display: block !important;
