@@ -3,6 +3,8 @@ body {
   background-color: #ffffff !important; 
   color: #333333 !important;           
 }
+
+
 .kegiatan-section {
   background-color: #ffffff !important;
 }
@@ -1689,100 +1691,76 @@ text-align-last: center;
     z-index: 0;
   }
 }
-/* ===================================================
-   FIX TOTAL: ASPIRASI KHUSUS HP (ANTI BOCOR LAPTOP)
-   =================================================== */
 @media screen and (max-width: 768px) {
   
-  /* 1. Kembalikan Section ke Mode Gelap SMANSA */
   .aspirasi-section {
-    position: relative !important;
+    position: relative;
     padding: 80px 25px !important; 
-    overflow: hidden !important;
-    background: #000000 !important; /* Kunci hitam agar tidak putih */
+    overflow: hidden;
   }
 
-  /* 2. MATIKAN KOTAK PUTIH LAPTOP DI HP */
-  .aspirasi-section .container {
-    background: transparent !important; /* WAJIB: Hapus kotak putih laptop */
-    border: none !important;            /* Hapus bingkai emas laptop */
-    padding: 0 !important;
-    max-width: 100% !important;
-    box-shadow: none !important;
-    backdrop-filter: none !important;
-  }
-
-  /* 3. Garis Bingkai Tipis HP (After) */
+  
   .aspirasi-section::after {
-    content: "" !important;
-    position: absolute !important;
-    top: 15px; bottom: 15px; left: 15px; right: 15px;
-    border: 2px solid rgba(255, 215, 0, 0.4) !important; 
-    border-radius: 15px !important;
-    pointer-events: none !important; 
-    z-index: 2 !important;
+    content: "";
+    position: absolute;
+    top: 15px;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    border: 2px solid rgba(255, 215, 0, 0.4); 
+    border-radius: 15px;
+    pointer-events: none; 
+    z-index: 2;
   }
 
-  /* 4. Teks Judul HP */
+  
   .aspirasi-section h2 {
-    color: #ffffff !important; /* Paksa putih agar tidak gaib */
     font-size: 2.2rem !important;
-    line-height: 1.1 !important;
-    max-width: 250px !important; 
+    line-height: 1.1;
+    max-width: 200px; 
     margin: 0 auto 20px !important;
-    font-weight: 800 !important;
-    position: relative !important;
-    z-index: 3 !important;
-    text-align: center !important;
+    display: block;
+    font-weight: 800;
+    position: relative;
+    z-index: 3;
   }
 
-  /* 5. Teks Deskripsi HP */
+  
   .aspirasi-section p {
-    color: #ffffff !important; /* Paksa putih */
     font-size: 1rem !important;
-    padding: 0 10px !important;
-    line-height: 1.4 !important;
-    margin-bottom: 25px !important;
-    position: relative !important;
-    z-index: 3 !important;
-    text-align: center !important;
+    padding: 0 10px;
+    line-height: 1.4;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 3;
   }
 
-  /* 6. Logo MPK HP (Before) */
+  
   .aspirasi-section::before {
-    content: "" !important;
-    position: absolute !important;
     width: 285px !important;
     height: 285px !important;
-    background: url('20260315_014405_0000.png') no-repeat center/contain !important;
     opacity: 0.35 !important; 
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    z-index: 1 !important;
-    display: block !important;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
   }
 
-  /* 7. Latar Belakang Hitam-Merah HP */
+  
   .aspirasi-bg {
-    position: absolute !important;
-    top: 0; left: 0; width: 100%; height: 100%;
     opacity: 0.75 !important; 
+    
     background: linear-gradient(135deg, #4b0000, #000000) !important;
-    z-index: 0 !important;
+    z-index: 0;
   }
 
-  /* 8. Tombol HP */
+  
   .aspirasi-btn {
-    background: #ffffff !important;
-    color: #8B0000 !important;
     padding: 12px 25px !important;
     font-size: 0.95rem !important;
-    position: relative !important;
-    z-index: 4 !important; 
-    border-radius: 50px !important;
-    display: inline-block !important;
-    text-decoration: none !important;
+    position: relative;
+    z-index: 4; 
+    border-radius: 50px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -1975,5 +1953,25 @@ text-align-last: center;
     footer {
       padding: 15px 10px !important;
     }
+    /* TAMBAHKAN KODE INI DI DALAM MEDIA QUERY HP KAMU */
+@media screen and (max-width: 768px) {
+  
+  .kegiatan-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; 
+    gap: 15px !important;
+  }
+
+  .survey-card {
+    grid-column: span 2 !important; 
+    width: 100% !important;
+  }
+  
+  .survey-card .kegiatan-img-wrapper {
+    max-height: 350px !important; 
+    overflow: hidden;
   }
 }
+}
+    }
+  
