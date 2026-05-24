@@ -884,9 +884,7 @@ transform: scale(0.95);
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  position: relative;
-  z-index: 1;
-  grid-auto-rows: 200px; 
+  grid-auto-rows: 200px; /* Kembali ke setelan awal kamu */
 }
 
 
@@ -909,7 +907,7 @@ transform: scale(0.95);
 
 .kegiatan-card {
   position: relative;
-  overflow: hidden;
+  overflow: hidden; 
   border-radius: 15px;
   cursor: pointer;
 }
@@ -1020,54 +1018,6 @@ transform: scale(0.95);
   color: #940303; 
   margin-bottom: 40px; 
   text-shadow: 0 0 5px rgba(255,255,255,0.5); 
-}
-/* Styling Kartu Baru */
-/* Styling Kartu Baru */
-.new-news-card {
-    order: -1; /* Memaksa dia tampil di urutan pertama */
-    grid-column: span 1; /* Karena portrait, jadi lebarnya cuma 1 kolom */
-    grid-row: span 2;    /* Tingginya 2 baris agar sesuai portrait */
-}
-
-/* Memastikan Badge NEW NEWS tetap cantik di pojok */
-.badge-new {
-    position: absolute;
-    top: 15px;
-    right: 15px;
-    background: #FFD700;
-    color: #8B0000;
-    padding: 5px 12px;
-    font-weight: 800;
-    font-size: 0.9rem;
-    border-radius: 20px;
-    z-index: 5; /* Agar tidak tertutup */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    animation: blink 1.5s infinite;
-}
-
-/* Judul khusus agar lebih besar di HP */
-.kegiatan-nama.big-text {
-    font-size: 1.3rem; 
-    line-height: 1.2;
-    background: rgba(0,0,0,0.6);
-    padding: 10px;
-}
-
-/* Animasi Kedip untuk New News */
-@keyframes blink {
-  0% { opacity: 1; }
-  50% { opacity: 0.7; }
-  100% { opacity: 1; }
-}
-
-/* Responsif untuk HP agar teks tidak kepotong */
-@media screen and (max-width: 480px) {
-  .kegiatan-nama.big-text {
-      font-size: 1.2rem;
-  }
-  .badge-new {
-      font-size: 0.8rem;
-  }
 }
 
 .aspirasi-section {
