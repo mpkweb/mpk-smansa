@@ -2200,15 +2200,38 @@ text-align-last: center;
     font-size: 0.9rem !important;
     width: 85% !important;
    
-/* --- BACKGROUND KHUSUS KOMISI (HP) --- */
+/* --- FIX BACKGROUND HP AGAR TIDAK ZOOM TAPI TETAP GERAK --- */
 @media screen and (max-width: 768px) {
   .komisi-section {
-      /* Ganti 'bg-komisi-hp.jpeg' dengan nama file gambar HP kamu */
-      background-image: url("empeka.jpeg") !important;
-      background-attachment: scroll !important; /* Biar tidak nge-zoom/error */
+      position: relative;
+      overflow: hidden !important;
+      /* Hapus background standar agar tidak bentrok */
+      background: transparent !important; 
+  }
+
+  /* Kita buatkan wadah background sendiri di belakang */
+  .komisi-section::before {
+      content: "" !important;
+      position: absolute !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100vw !important; /* Lebar selayar penuh */
+      height: 100vh !important; /* Tinggi selayar penuh */
+      
+      /* GANTI INI KE GAMBAR HP KAMU (DIPOTONG PORTRAIT) */
+      background-image: url("empeka.jpeg") !important; 
+      
+      /* KUNCI: Kita buat dia memanjang tapi tidak membesar selayar */
       background-size: cover !important;
       background-position: center !important;
+      
+      /* Trik agar dia tidak kaku: biarkan dia 'diam' di layar */
+      background-attachment: fixed !important; 
+      
+      z-index: -1 !important; /* Di belakang konten */
+      opacity: 0.25 !important;
   }
+}
 }
 }
     }
@@ -2216,7 +2239,7 @@ text-align-last: center;
   }
 }
 }
-}
+
 
 
 
