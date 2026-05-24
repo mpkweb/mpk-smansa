@@ -2059,24 +2059,6 @@ text-align-last: center;
 }
 
 } 
-    /* TAMBAHKAN KODE INI DI DALAM MEDIA QUERY HP KAMU */
-@media screen and (max-width: 768px) {
-  
-  .kegiatan-grid {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important; 
-    gap: 15px !important;
-  }
-
-  .survey-card {
-    grid-column: span 2 !important; 
-    width: 100% !important;
-  }
-  
-  .survey-card .kegiatan-img-wrapper {
-    max-height: 350px !important; 
-    overflow: hidden;
-  }
   /* ===================================================
    STYLING KHUSUS HP (MAX-WIDTH: 768px)
    =================================================== */
@@ -2203,48 +2185,6 @@ text-align-last: center;
   text-align: center;
 }
 
-/* Biarkan modal terlihat saat dipanggil oleh JS */
-#modalKegiatan.show {
-  display: block !important;
-}
-
-.modal-body {
-  position: relative;
-  max-width: 600px;
-  margin: 50px auto;
-  background: #1a0000; /* Sesuaikan dengan warna tema kamu */
-  padding: 20px;
-  border-radius: 20px;
-  border: 3px solid #FFD700;
-}
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.9);
-  padding: 50px;
-}
-/* Splash Screen Full Screen */
-#splash-screen {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; 
-  height: 100vh;
-  background: #8B0000; /* Warna Merah Marun */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 999999;
-  text-align: center;
-  color: white;
-}
-
-.splash-logo { width: 200px; margin-bottom: 20px; }
-.splash-content h1 { font-size: 3rem; margin: 10px 0; }
-
 .enter-btn {
   padding: 20px 50px;
   font-size: 20px;
@@ -2263,4 +2203,4 @@ text-align-last: center;
 }
 }
 }
-    }
+    
