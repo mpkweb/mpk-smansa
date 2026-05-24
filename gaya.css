@@ -605,19 +605,6 @@ transform: scale(0.95);
   opacity: 0.15;
   z-index: 0;
 }
-/* ===================================================
-   BACKGROUND KHUSUS HP (OVERRIDE LAPTOP)
-   =================================================== */
-   @media screen and (max-width: 768px) {
-    .tugas-section::before {
-      /* Ganti 'empeka-hp.jpeg' dengan nama file background HP kamu */
-      background: url("empeka.jpeg") no-repeat center center !important;
-      background-size: cover !important;
-      background-attachment: scroll !important; /* Fixed sering bug di HP, jadi pakai scroll */
-      opacity: 0.25 !important; /* Sedikit lebih terang agar konten terbaca di HP */
-    }
-  }
-
 /* Memastikan konten di atas background */
 .tugas-section .container,
 .tugas-section h2,
@@ -2212,6 +2199,17 @@ text-align-last: center;
     bottom: 10px !important;
     font-size: 0.9rem !important;
     width: 85% !important;
+   
+    /* bg hp tugas dan fungsi */
+@media screen and (max-width: 768px) {
+  .tugas-section::before {
+    /* Ganti 'empeka-hp.jpeg' dengan nama file background HP kamu */
+    background: url("empeka.jpeg") no-repeat center center !important;
+    background-size: cover !important;
+    background-attachment: scroll !important; 
+    opacity: 0.25 !important; /* Sedikit lebih terang agar konten terbaca di HP */
+  }
+}
   }
 }
 }
