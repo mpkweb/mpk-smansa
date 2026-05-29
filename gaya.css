@@ -708,10 +708,12 @@ transform: scale(0.95);
    STYLING KHUSUS HP (MAX-WIDTH: 768px)
    =================================================== */
    @media screen and (max-width: 768px) {
-    .tugas-section {
+    tugas-section {
+      background: url("empeka.jpeg") no-repeat center center !important;
+      background-size: cover !important;
+      background-attachment: fixed !important; /* Efek diam saat scroll */
       padding: 60px 15px !important;
-      position: relative;
-      overflow: hidden; /* Penting untuk menjaga background tetap di dalam */
+      position: relative !important;
     }
   
     .tugas-section h2 {
@@ -719,18 +721,8 @@ transform: scale(0.95);
       margin-bottom: 40px;
     }
   
-    /* KUNCI: Menghapus perilaku fixed yang bikin zoom di HP */
     .tugas-section::before {
-      background: url("empeka.jpeg") no-repeat center center !important;
-      
-      /* Ganti 'cover' ke 'auto' atau 'contain' agar tidak zoom paksa */
-      background-size: cover !important; 
-      
-      /* Mengubah attachment menjadi scroll agar tidak merusak rendering HP */
-      background-attachment: scroll !important; 
-      
-      /* Memastikan opacity tetap ada */
-      opacity: 0.15 !important;
+      display: none !important;
     }
   
     .timeline { padding-left: 20px; }
