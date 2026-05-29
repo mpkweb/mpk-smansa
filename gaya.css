@@ -2172,6 +2172,12 @@ text-align-last: center;
     font-size: 0.9rem !important;
     width: 85% !important;
 }
+@media screen and (max-width: 768px) {
+  .tugas-section::before {
+    display: none !important; /* Paksa hapus */
+    background: none !important; /* Paksa hilangkan gambar */
+  }
+}
 }
 }
 }
