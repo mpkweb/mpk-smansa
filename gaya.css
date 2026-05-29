@@ -704,34 +704,6 @@ transform: scale(0.95);
 .timeline-item:nth-child(11) { animation-delay: 1s; }
 .timeline-item:nth-child(12) { animation-delay: 1.1s; }
 
-/* ===================================================
-   STYLING KHUSUS HP (MAX-WIDTH: 768px)
-   =================================================== */
-   @media screen and (max-width: 768px) {
-    tugas-section {
-      background: url("empeka.jpeg") no-repeat center center !important;
-      background-size: cover !important;
-      background-attachment: fixed !important; /* Efek diam saat scroll */
-      padding: 60px 15px !important;
-      position: relative !important;
-    }
-  
-    .tugas-section h2 {
-      font-size: 2rem !important;
-      margin-bottom: 40px;
-    }
-  
-    .tugas-section::before {
-      display: none !important;
-    }
-  
-    .timeline { padding-left: 20px; }
-    .timeline::before { left: 0px; }
-    .timeline-item { padding-left: 25px; margin-bottom: 30px; }
-    .timeline-number { left: -15px; }
-    .timeline-item p { font-size: 14px !important; }
-  }
-
 .hero-logo {
   position: relative;
   width: 100%;
