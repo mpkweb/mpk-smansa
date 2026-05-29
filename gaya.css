@@ -1,9 +1,7 @@
-
 body {
   background-color: #ffffff !important; 
   color: #333333 !important;           
 }
-
 
 .kegiatan-section {
   background-color: #ffffff !important;
@@ -20,8 +18,6 @@ body {
   color:#333;
   overflow-x:hidden;
   }
-  
-  
   
   header{
   background:linear-gradient(135deg,#8B0000 0%,#DC143C 50%,#B22222 100%);
@@ -87,7 +83,6 @@ body {
     transition: 0.3s;
   }
 }
-
 
 @media screen and (max-width: 768px) {
   nav {
@@ -368,9 +363,7 @@ transform: scale(0.95);
   
   
   
-  /* ===================================================
-   STYLING STRUKTUR (UNTUK LAPTOP / DEFAULT)
-   =================================================== */
+/*STYLING STRUKTUR (UNTUK LAPTOP / DEFAULT)*/
 .struktur-section {
   position: relative;
   padding: 80px 0;
@@ -440,24 +433,19 @@ transform: scale(0.95);
   box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* ===================================================
-   LOGIKA FILTER & COMING SOON STRUKTUR (LAPTOP)
-   =================================================== */
-
-/* Sembunyikan semua periode struktur secara default */
 .struktur-periode {
   display: none;
   opacity: 0;
   transition: opacity 0.4s ease;
 }
 
-/* Munculkan hanya periode yang aktif sesuai dropdown */
+
 .struktur-periode.aktif {
   display: block !important;
   opacity: 1;
 }
 
-/* Centering layout dropdown agar posisinya manis di tengah */
+
 .dropdown-wrapper {
   display: flex;
   justify-content: center;
@@ -476,15 +464,14 @@ transform: scale(0.95);
   outline: none;
 }
 
-/* Styling Box Coming Soon 2026/2027 */
 .coming-soon {
   text-align: center;
   padding: 80px 20px;
   max-width: 600px;
   margin: 0 auto;
-  background: transparent !important; /* Hapus background putih */
-  box-shadow: none !important;        /* Hapus shadow kotak */
-  border: none !important;            /* Hapus border atas merah */
+  background: transparent !important; 
+  box-shadow: none !important;        
+  border: none !important;            
 }
 
 .coming-soon h3 {
@@ -502,11 +489,7 @@ transform: scale(0.95);
   font-weight: 500;
 }
 
-/* ===================================================
-   STYLING KHUSUS HP (MAX-WIDTH: 768px)
-   =================================================== */
 @media screen and (max-width: 768px) {
-  /* RESPONSIVE DROPDOWN UNTUK HP */
   .dropdown-wrapper {
     display: flex !important;
     justify-content: center !important;
@@ -517,7 +500,7 @@ transform: scale(0.95);
 
   .dropdown-wrapper select {
     width: 100% !important;
-    max-width: 280px !important; /* Biar ukurannya pas di layar HP */
+    max-width: 280px !important; 
     padding: 12px !important;
     font-size: 15px !important;
     text-align: center;
@@ -541,8 +524,6 @@ transform: scale(0.95);
   transform:translateY(-10px) scale(1.03);
   }
   
-  
-  
   a,button{
   transition:all 0.3s ease;
   }
@@ -559,9 +540,7 @@ transform: scale(0.95);
   letter-spacing:2px;
   color:#8B0000;
   }
-  /* ===================================================
-   STYLING TUGAS & FUNGSI (DENGAN BACKGROUND PARALLAX)
-   =================================================== */
+
 .dokumen-list a {
   display: inline-block;
   background: #8B0000;
@@ -580,15 +559,13 @@ transform: scale(0.95);
 
 .tugas-section {
   padding: 80px 0;
-  background: transparent !important; /* Dibuat transparan agar background ::before muncul */
+  background: transparent !important; 
   color: #8B0000;
   position: relative;
   overflow: hidden;
 }
 
-/* ===================================================
-   EFEK BACKGROUND GERAK (LAPTOP: empeka.jpeg)
-   =================================================== */
+/* EFEK BACKGROUND GERAK (LAPTOP empeka2) */
 .tugas-section::before {
   content: '';
   position: absolute;
@@ -597,7 +574,6 @@ transform: scale(0.95);
   width: 100%;
   height: 100%;
   
-  /* Background untuk LAPTOP */
   background: url("empeka2.jpeg") no-repeat center center;
   background-size: cover !important;
   background-attachment: fixed; 
@@ -605,7 +581,6 @@ transform: scale(0.95);
   opacity: 0.15;
   z-index: 0;
 }
-/* Memastikan konten di atas background */
 .tugas-section .container,
 .tugas-section h2,
 .timeline {
@@ -621,9 +596,6 @@ transform: scale(0.95);
   letter-spacing: 2px;
 }
 
-/* ===================================================
-   STYLING TIMELINE GRAPHIC
-   =================================================== */
 .timeline {
   position: relative;
   max-width: 900px;
@@ -674,7 +646,6 @@ transform: scale(0.95);
   transition: all 0.3s ease;
 }
 
-/* EFFECT HOVER */
 .timeline-item:hover p {
   transform: translateX(10px);
   background: rgba(255, 215, 0, 0.2);
@@ -710,16 +681,12 @@ transform: scale(0.95);
   height: auto;
 }
 
-/* ===================================================
-   STYLING LOGO HERO (SISA KODE)
-   =================================================== */
 .hero-logo {
   position: relative;
   width: 100%;
   height: auto;
 }
       
-
 .logo-kiri,
 .logo-kanan {
   position: absolute;
@@ -730,20 +697,17 @@ transform: scale(0.95);
   z-index: 10; 
 }
 
-
 .logo-kiri {
   left: 40px;
   width: 90px;
   top: 120px; 
 }
 
-
 .logo-kanan {
   right: 40px;
   width: 120px;
   top: 140px; 
 }
-
 
 @keyframes float {
   0% { transform: translateY(0); }
@@ -772,61 +736,60 @@ transform: scale(0.95);
       .tugas-item p { font-size: 14px; }
       
                       
-                      .tugas-item:hover{
-                      transform:translateX(6px);
-                      }
-                      .search-bar{
-                          display:flex;
-                          justify-content:center;
-                          margin:30px 0;
-                          gap:10px;
-                      }
+       .tugas-item:hover{
+       transform:translateX(6px);
+       }
+        .search-bar{
+         display:flex;
+         justify-content:center;
+         margin:30px 0;
+         gap:10px;
+         }
                       
-                      .search-bar input{
-                          padding:10px 15px;
-                          border-radius:10px;
-                          border:2px solid #8B0000;
-                          width:250px;
-                          outline:none;
-                      }
+          .search-bar input{
+          padding:10px 15px;
+          border-radius:10px;
+          border:2px solid #8B0000;
+          width:250px;
+          outline:none;
+          }
                       
-                      .search-bar button{
-                          padding:10px 20px;
-                          border:none;
-                          border-radius:10px;
-                          background:#8B0000;
-                          color:white;
-                          cursor:pointer;
-                          transition:0.3s;
-                      }
+           .search-bar button{
+            padding:10px 20px;
+            border:none;
+            border-radius:10px;
+            background:#8B0000;
+            color:white;
+            cursor:pointer;
+            transition:0.3s;
+            }
                       
-                      .search-bar button:hover{
-                          background:#DC143C;
-                      }
-                      #search-section{
-                          padding:50px 0; 
-                          color:white;
-                      }
+             .search-bar button:hover{
+             background:#DC143C;
+             }
+             #search-section{
+             padding:50px 0; 
+             color:white;
+             }
                       
-                      .search-bar input{
-                          width:300px;
-                      }
+            .search-bar input{
+            width:300px;
+            }
                       
-                      .search-bar button{
-                          background:#8B0000;
-                      }
+          .search-bar button{
+          background:#8B0000;
+          }
                       
-                      #search-section { width: 90%; max-width: 300px; }
-.search-bar input { width: 100%; font-size: 14px; }
-.search-bar button { width: 100%; padding: 10px; font-size: 14px; }
+      #search-section { width: 90%; max-width: 300px; }
+      .search-bar input { width: 100%; font-size: 14px; }
+      .search-bar button { width: 100%; padding: 10px; font-size: 14px; }
 
-                      .kegiatan-section{
-                          padding:80px 0;
-                          background:#fff;
-                          color:#8B0000;
-                        }
-                        
-                     
+    .kegiatan-section{
+    padding:80px 0;
+    background:#fff;
+   color:#8B0000;
+   }
+                              
 .kegiatan-section {
   position: relative;
   width: 100%;
@@ -855,7 +818,7 @@ transform: scale(0.95);
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  grid-auto-rows: 200px; /* Kembali ke setelan awal kamu */
+  grid-auto-rows: 200px; 
 }
 
 
@@ -1127,7 +1090,6 @@ footer p:last-child {
   overflow: hidden;
 }
 
-
 .hero-slider {
   position: absolute;
   bottom: 0;
@@ -1137,7 +1099,6 @@ footer p:last-child {
   overflow: hidden;
   z-index: 1;
 }
-
 
 .hero-track {
   display: flex;
@@ -1228,7 +1189,6 @@ footer p:last-child {
   opacity: 0.8;
 }
 
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -1309,7 +1269,6 @@ text-align-last: center;
     display: block;
   }
 
-  
   .nav-links {
     position: absolute;
     top: 70px;
@@ -1328,7 +1287,6 @@ text-align-last: center;
     display: block !important; 
   }
 
-  
   .nav-links li {
     width: 100%; 
     height: 50px !important; 
@@ -1525,7 +1483,6 @@ text-align-last: center;
     .arrow.left {
         left: 5px;
     }
-
     .arrow.right {
         right: 5px;
     }
@@ -1536,10 +1493,7 @@ text-align-last: center;
     line-height: 1.1;
     font-weight: 800;
     margin-bottom: 30px;
-    
-    
     max-width: 320px; 
-    
     margin-left: auto; 
     margin-right: auto;
     text-align: center;
@@ -1548,7 +1502,6 @@ text-align-last: center;
     color: #8B0000;
 }
 
-  
   .struktur-section::before {
       width: 100%;       
       height: 100%;      
@@ -1559,14 +1512,12 @@ text-align-last: center;
       transform: translate(-50%, -50%);
   }
 
-  
   .struktur-card {
       width: 90%;        
       max-width: 320px;
       margin: 10px auto; 
   }
 
-  
   .struktur-card.komisi ul {
       text-align: left;
       display: inline-block; 
@@ -1732,9 +1683,7 @@ text-align-last: center;
 }
 @media screen and (max-width: 768px) {
   
-/* ===================================================
-   STYLING KEGIATAN (UNTUK LAPTOP / DEFAULT)
-   =================================================== */
+/* STYLING KEGIATAN (UNTUK LAPTOP / DEFAULT) */
    .kegiatan-title {
     font-size: 3rem !important; 
     font-weight: 800 !important;
@@ -1747,10 +1696,9 @@ text-align-last: center;
   
   .kegiatan-section {
     padding: 60px 20px !important; 
-    position: relative; /* Ditambahkan agar background ::before di HP posisinya pas */
+    position: relative; 
   }
   
-  /* TOMBOL FILTER PERIODE (LAPTOP) */
   .periode-filter {
     display: flex !important;
     flex-direction: row !important; 
@@ -1803,10 +1751,6 @@ text-align-last: center;
     width: 85%; 
   }
   
-  
-  /* ===================================================
-   STYLING KHUSUS HP (MAX-WIDTH: 768px) - FINAL FIX
-   =================================================== */
 @media screen and (max-width: 768px) {
   
   .kegiatan-title {
@@ -1817,7 +1761,6 @@ text-align-last: center;
     display: block;
   }
 
-  /* Tombol Filter Periode di HP */
   .periode-filter {
     gap: 10px;        
     max-width: 340px; 
@@ -1830,16 +1773,15 @@ text-align-last: center;
     font-size: 14px !important;
   }
 
-  /* Susun satu per satu lurus ke bawah */
   .kegiatan-grid {
     display: flex !important;
     flex-direction: column !important; 
-    align-items: center !important; /* Paksa posisi kartu di tengah layar HP */
+    align-items: center !important; 
     gap: 25px !important; 
     padding: 0 15px !important;
   }
 
-  /* Reset mutlak sisa-sisa grid laptop */
+  
   .kegiatan-grid .kegiatan-card {
     grid-column: auto !important;
     grid-row: auto !important;
@@ -1853,38 +1795,30 @@ text-align-last: center;
     overflow: hidden !important;
   }
 
-  /* ----------------==================================
-     PENGATURAN BENTUK FRAME FOTO DI HP
-     ----------------================================== */
-
-  /* 1. KHUSUS PORTRAIT (Survey & Penyerahan Album) -> Ramping & Tinggi */
   .kegiatan-grid .kegiatan-card.portrait {
     width: 75% !important; 
     max-width: 290px !important;
   }
   .kegiatan-grid .kegiatan-card.portrait .kegiatan-img-wrapper {
     height: auto !important;
-    aspect-ratio: 3 / 4 !important; /* Tinggi tegak ke bawah */
+    aspect-ratio: 3 / 4 !important; 
   }
 
-  /* 2. KHUSUS KARTU LANDSCAPE & KARTU SQUARE (Debat & Sisa Semua Foto ke Bawah) */
-  /* Di sini si .square (Debat & LDKM) kita satukan aturannya dengan .landscape agar berubah jadi landscape melebar */
   .kegiatan-grid .kegiatan-card.landscape,
   .kegiatan-grid .kegiatan-card.square {
-    width: 100% !important; /* Lebar penuh memenuhi layar HP agar rapi */
+    width: 100% !important; 
   }
   
   .kegiatan-grid .kegiatan-card.landscape .kegiatan-img-wrapper,
   .kegiatan-grid .kegiatan-card.square .kegiatan-img-wrapper {
     height: auto !important;
-    aspect-ratio: 16 / 9 !important; /* DIUBAH JADI LANDSCAPE KANAN-KIRI */
+    aspect-ratio: 16 / 9 !important; 
   }
 
-  /* Pengaturan Gambar di Dalam Frame agar Tidak Penyet */
   .kegiatan-grid .kegiatan-card img {
     width: 100% !important;
     height: 100% !important;
-    object-fit: cover !important; /* Mengisi penuh frame landscape/portrait tanpa merusak rasio asli gambar */
+    object-fit: cover !important; 
   }
 
   /* Efek Background Kegiatan di HP */
@@ -1945,7 +1879,6 @@ text-align-last: center;
     z-index: 3;
   }
 
-  
   .aspirasi-section::before {
     width: 285px !important;
     height: 285px !important;
@@ -1964,7 +1897,6 @@ text-align-last: center;
     z-index: 0;
   }
 
-  
   .aspirasi-btn {
     padding: 12px 25px !important;
     font-size: 0.95rem !important;
@@ -2030,11 +1962,8 @@ text-align-last: center;
 }
 
 } 
-  /* ===================================================
-   STYLING KHUSUS HP (MAX-WIDTH: 768px)
-   =================================================== */
+  /*STYLING KHUSUS HP (MAX-WIDTH: 768px)*/
 @media screen and (max-width: 768px) {
-  /* RESPONSIVE DROPDOWN UNTUK HP */
   .dropdown-wrapper {
     display: flex !important;
     justify-content: center !important;
@@ -2056,14 +1985,13 @@ text-align-last: center;
     font-weight: 700 !important;
   }
 
-  /* PAKSA HANCURKAN KOTAK/CARD COMING SOON DI HP */
   .coming-soon {
     width: 100% !important;
     max-width: none !important;
-    background: transparent !important;   /* Menghapus background putih paksa */
+    background: transparent !important;   
     background-color: transparent !important;
-    box-shadow: none !important;          /* Menghapus bayangan kotak */
-    border: none !important;              /* Menghapus garis border merah */
+    box-shadow: none !important;          
+    border: none !important;              
     padding: 40px 10px !important;
     margin: 0 auto !important;
     display: block !important;
@@ -2104,69 +2032,55 @@ text-align-last: center;
    
 .kegiatan-card {
   position: relative;
-  z-index: 10; /* Pastikan dia paling atas */
+  z-index: 10; 
   cursor: pointer !important;
 }
 
 .kegiatan-img-wrapper img {
-  pointer-events: none; /* Agar klik diteruskan ke div pembungkusnya */
+  pointer-events: none; 
 }
-/* --- CSS PALING BAWAH - JANGAN DIUBAH LAGI --- */
-@media screen and (max-width: 768px) {
-  /* 1. Reset semua container kegiatan agar jadi satu kolom tegak */
-  .kegiatan-grid {
-      display: block !important; /* Ubah dari grid ke block agar berurutan */
-  }
 
-  /* 2. Pastikan card punya ruang */
+@media screen and (max-width: 768px) {
+  .kegiatan-grid {
+      display: block !important; 
+  }
   .kegiatan-card {
       width: 100% !important;
       margin-bottom: 25px !important;
       display: block !important;
-      overflow: visible !important; /* Biarkan visible agar badge aman */
+      overflow: visible !important; 
   }
-
-  /* 3. Paksa tinggi wrapper agar foto muncul */
   .kegiatan-img-wrapper {
       width: 100% !important;
-      height: 250px !important; /* Paksa tinggi agar foto tidak hilang */
+      height: 250px !important; 
       display: block !important;
       border-radius: 15px !important;
       position: relative !important;
-      overflow: hidden !important; /* Tetap hidden untuk foto saja */
+      overflow: hidden !important; 
   }
-
-  /* 4. Pastikan gambar mengisi 100% wrapper */
   .kegiatan-img-wrapper img {
       width: 100% !important;
       height: 100% !important;
       object-fit: cover !important;
       display: block !important;
   }
-  /* --- METODE PAKSA AKHIR KHUSUS FOTO SURVEY DI HP --- */
 @media screen and (max-width: 768px) {
-  
-  /* 1. Paksa wadah kartu Survey memiliki ukuran */
   .kegiatan-img-wrapper.hp-force-show {
     width: 100% !important;
-    height: 300px !important; /* Paksa tinggi di HP agar foto tidak hilang */
+    height: 300px !important; 
     display: block !important;
     border-radius: 15px !important;
     position: relative !important;
-    overflow: hidden !important; /* FOTO WAJIB DI DALAM */
+    overflow: hidden !important; 
     box-shadow: 0 10px 25px rgba(0,0,0,0.3) !important;
   }
-
-  /* 2. Paksa gambar Survey untuk mengisi penuh dan muncul */
   .kegiatan-img-wrapper.hp-force-show img {
     width: 100% !important;
     height: 100% !important;
-    object-fit: cover !important; /* Mencegah foto gepeng */
+    object-fit: cover !important; 
     display: block !important;
-    object-position: center !important; /* Agar bagian tengah foto tetap terlihat */
+    object-position: center !important; 
   }
-
-  /* 3. Sesuaikan teks agar tidak menutupi seluruh foto */
   .kegiatan-img-wrapper.hp-force-show .kegiatan-nama {
     bottom: 10px !important;
     font-size: 0.9rem !important;
@@ -2174,14 +2088,13 @@ text-align-last: center;
 }
 @media screen and (max-width: 768px) {
   .tugas-section::before {
-    display: none !important; /* Paksa hapus */
-    background: none !important; /* Paksa hilangkan gambar */
-  }
-}
-}
-}
-}
-}
+    display: none !important; 
+    background: none !important; 
+       }
+      }
+     }
     }
+   }
+  }
+ }
 }
-  
