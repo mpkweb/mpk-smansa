@@ -707,30 +707,38 @@ transform: scale(0.95);
 /* ===================================================
    STYLING KHUSUS HP (MAX-WIDTH: 768px)
    =================================================== */
-@media screen and (max-width: 768px) {
-  .tugas-section {
-    padding: 60px 15px !important;
-    background: transparent !important;
+   @media screen and (max-width: 768px) {
+    .tugas-section {
+      padding: 60px 15px !important;
+      position: relative;
+      overflow: hidden; /* Penting untuk menjaga background tetap di dalam */
+    }
+  
+    .tugas-section h2 {
+      font-size: 2rem !important;
+      margin-bottom: 40px;
+    }
+  
+    /* KUNCI: Menghapus perilaku fixed yang bikin zoom di HP */
+    .tugas-section::before {
+      background: url("empeka.jpeg") no-repeat center center !important;
+      
+      /* Ganti 'cover' ke 'auto' atau 'contain' agar tidak zoom paksa */
+      background-size: cover !important; 
+      
+      /* Mengubah attachment menjadi scroll agar tidak merusak rendering HP */
+      background-attachment: scroll !important; 
+      
+      /* Memastikan opacity tetap ada */
+      opacity: 0.15 !important;
+    }
+  
+    .timeline { padding-left: 20px; }
+    .timeline::before { left: 0px; }
+    .timeline-item { padding-left: 25px; margin-bottom: 30px; }
+    .timeline-number { left: -15px; }
+    .timeline-item p { font-size: 14px !important; }
   }
-
-  .tugas-section h2 {
-    font-size: 2rem !important;
-    margin-bottom: 40px;
-  }
-
-  /* GANTI BACKGROUND KE empeka2.jpeg KHUSUS HP */
-  .tugas-section::before {
-    background: url("empeka.jpeg") no-repeat center center !important;
-    background-size: cover !important;
-    background-attachment: fixed;
-  }
-
-  .timeline { padding-left: 20px; }
-  .timeline::before { left: 0px; }
-  .timeline-item { padding-left: 25px; margin-bottom: 30px; }
-  .timeline-number { left: -15px; }
-  .timeline-item p { font-size: 14px !important; }
-}
 
 .hero-logo {
   position: relative;
