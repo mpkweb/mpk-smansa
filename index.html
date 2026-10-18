@@ -665,37 +665,22 @@ Anggaran Dasar dan Anggaran Rumah Tangga yang menjadi pedoman kerja MPK masa bak
         </div>
       </footer>
 
-<!-- TOMBOL FLOATING E-VOTING KETOS DENGAN TOOLTIP -->
+<!-- === TARUH KODE TOMBOL DI SINI (TEPAT DI ATAS SCRIPT / BODY) === -->
 <a href="URL_GOOGLE_FORM_VOTING_KAMU" target="_blank" class="floating-voting-btn">
-  <span class="voting-tooltip">COMING SOON</span>
-  <span class="voting-icon">◉</span>
-  <span class="voting-text">E-Voting Pemilihan Ketua Osis 2026/2027</span>
+  <span class="voting-tooltip">Click Here! 👇</span>
+  <span class="voting-icon">🗳️</span>
+  <span class="voting-text">E-Voting Ketos</span>
 </a>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
 <script>
-
 AOS.init({
-duration:1000,
-once:true
+  duration:1000,
+  once:true
 });
-
-window.addEventListener("scroll", function(){
-
-let header = document.querySelector("header");
-
-if(window.scrollY > 50){
-header.classList.add("scrolled");
-}else{
-header.classList.remove("scrolled");
-}
-
-});
-
 </script>
 <script src="main.js"></script>
 
-</body>
+</body> <!-- PASTIKAN INI ADALAH PENUTUP HTML TERAKHIR -->
 </html>
