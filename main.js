@@ -72,23 +72,23 @@
   }
 
   /* ===================================================
-     6. EKSEKUSI OTOMATIS SAAT HALAMAN SELESAI DIMUAT
+     6. EKSEKUSI OTOMATIS HALAMAN SELESAI DIMUAT
      =================================================== */
   document.addEventListener("DOMContentLoaded", function() {
-    // Pastikan fungsi panah berjalan setelah semua elemen HTML dibaca browser
+    
     hideArrowsOnDesktop();
   });
   
-  // Menjalankan fungsi resize otomatis saat layar ditarik/diubah
+ 
   window.addEventListener('resize', hideArrowsOnDesktop);
   
-  // Memastikan saat web pertama kali dibuka, periode 2025/2026 langsung aktif tampil
+ 
 document.addEventListener("DOMContentLoaded", function() {
-  // Set value dropdown secara default ke s1 (2025/2026)
+  
   const selectStruktur = document.getElementById("pilihStruktur");
   if (selectStruktur) {
       selectStruktur.value = "s1"; 
-      showStruktur(); // Jalankan fungsi untuk memunculkan datanya
+      showStruktur(); 
   }
 });
   
