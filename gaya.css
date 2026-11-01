@@ -363,7 +363,7 @@ transform: scale(0.95);
   
   
   
-/*STYLING STRUKTUR (UNTUK LAPTOP / DEFAULT)*/
+/*STRUKTUR LAPTOP / DEFAULT*/
 .struktur-section {
   position: relative;
   padding: 80px 0;
@@ -565,7 +565,7 @@ transform: scale(0.95);
   overflow: hidden;
 }
 
-/* EFEK BACKGROUND GERAK (LAPTOP empeka2) */
+/* FX BG GERAK LAPTOP */
 .tugas-section::before {
   content: '';
   position: absolute;
@@ -1683,7 +1683,7 @@ text-align-last: center;
 }
 @media screen and (max-width: 768px) {
   
-/* STYLING KEGIATAN (UNTUK LAPTOP / DEFAULT) */
+/*  KEGIATAN LAPTOP / DEFAULT */
    .kegiatan-title {
     font-size: 3rem !important; 
     font-weight: 800 !important;
@@ -1821,7 +1821,7 @@ text-align-last: center;
     object-fit: cover !important; 
   }
 
-  /* Efek Background Kegiatan di HP */
+  /* Efek Bg HP */
   .kegiatan-section::before {
     content: "";
     position: absolute;
@@ -1962,7 +1962,7 @@ text-align-last: center;
 }
 
 } 
-  /*STYLING KHUSUS HP (MAX-WIDTH: 768px)*/
+  /*HP (MAX-WIDTH: 768px)*/
 @media screen and (max-width: 768px) {
   .dropdown-wrapper {
     display: flex !important;
